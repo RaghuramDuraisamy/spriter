@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from StringIO import StringIO
+from io import StringIO
 import os
 import re
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from PIL import Image
 
 
@@ -53,10 +53,10 @@ class URLImage(BaseImage):
         self._set_image(img)
 
     def __opener(self, url, default, proxy=None):
-        img = urllib.urlopen(url, proxies=proxy)
+        img = urllib.request.urlopen(url, proxies=proxy)
         if img.code != 200:
             #presumed default is http: 200!
-            img = urllib.urlopen(default, proxies=proxy)
+            img = urllib.request.urlopen(default, proxies=proxy)
         return StringIO(img.read())
 
 

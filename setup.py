@@ -4,10 +4,10 @@ from setuptools import setup, find_packages
 from spriter import VERSION
 
 setup(
-    name=u'spriter',
+    name='spriter',
     version=VERSION,
-    description=u"Pitomba's sprite generator",
-    long_description=u"""
+    description="Pitomba's sprite generator",
+    long_description="""
                         Pitomba provides simple and flexible optimized sprite
                         generator for CSS, using Python.
 
@@ -18,7 +18,7 @@ setup(
 
                         """,
     keywords='pitomba sprite css images generator png webp',
-    author=u'Rômulo Jales',
+    author='Rômulo Jales',
     author_email='romulo@romulojales.com',
     url='http://pitomba.org',
     download_url='https://github.com/pitomba/spriter',

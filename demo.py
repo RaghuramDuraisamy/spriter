@@ -15,7 +15,7 @@ def gen_sprite():
 
     #get images absolut paths
     for (_, _, filenames) in os.walk(IMAGE_PATH):
-        files.extend(map(lambda x: "{0}{1}".format(IMAGE_PATH, x), filenames))
+        files.extend(["{0}{1}".format(IMAGE_PATH, x) for x in filenames])
         break
 
     if files != []:
@@ -50,4 +50,4 @@ def gen_sprite():
 if __name__ == "__main__":
     print("Starting spriter demo")
     css, path = gen_sprite()
-    print("Done! Verify {0}").format(SPRITE_PATH)
+    print(("Done! Verify {0}").format(SPRITE_PATH))

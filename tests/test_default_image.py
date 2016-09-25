@@ -30,4 +30,4 @@ class Test(unittest.TestCase):
         sprite_img = Image.open(path)
         compare = Image.open(os.getcwd() + "/tests/fixtures/with_default.png")
         #This assert the default image is in the sprite
-        self.assertEquals(sprite_img.histogram(), compare.histogram())
+        self.assertEqual(sprite_img.histogram(), compare.histogram())

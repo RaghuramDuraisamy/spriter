@@ -13,7 +13,7 @@ class TestBase64Images(unittest.TestCase):
 
     def test_get_base_64_str(self):
         img = self.sprite.get_base64_str()
-        self.assertEquals(img, HAPPY_BASE64)
+        self.assertEqual(img, HAPPY_BASE64)
 
     def test_get_css_str_with_base64_sprite(self):
         css_template = self.sprite.get_css_base64()

@@ -28,7 +28,7 @@ class TestSprite(unittest.TestCase):
     def test_css_format(self):
         sprite = Sprite(self.paths)
         css = sprite.get_css()
-        self.assertEquals(css,
+        self.assertEqual(css,
                           ".sprite{background:url(\"%s/sprite.png\") 0 0 no-repeat;display:inline-block}.sprite.ssad{background-position: 0px 0px;width:64px;height:64px}.sprite.shappy{background-position: -64px 0px;width:64px;height:64px}" % os.getcwd())
 
     def test_do_write_css(self):
@@ -66,7 +66,7 @@ class TestSprite(unittest.TestCase):
             path = sprite.do_write_image()
             self.assertIn("sprite_url.png", path)
             compare = Image.open(os.getcwd() + "/tests/fixtures/sprite_url.png")
-            self.assertEquals(compare.histogram(), sprite.image.histogram())
+            self.assertEqual(compare.histogram(), sprite.image.histogram())
 
     def test_webp_generation(self):
         if  hasattr(Image.core,  "webp_decoder"):
@@ -99,4 +99,4 @@ class TestSprite(unittest.TestCase):
 
     def test_format_css_url(self):
         sprite = Sprite(self.paths, css_url="http://localhost/sprite.css")
-        self.assertEquals(sprite.css_url, "http://localhost/sprite.css")
+        self.assertEqual(sprite.css_url, "http://localhost/sprite.css")

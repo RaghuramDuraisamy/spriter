@@ -1,5 +1,5 @@
 import os
-import StringIO
+import io
 from PIL import Image
 import base64
 from spriter.image import FileImage, URLImage, class_name_function as cnf
@@ -101,7 +101,7 @@ class Sprite(object):
         """Returns the base64 str of the sprite"""
         if not hasattr(self, "image"):
             self.gen_image()
-        base64buffer = StringIO.StringIO()
+        base64buffer = io.StringIO()
         self._save_image(base64buffer)
         image_str = base64buffer.getvalue()
         base64buffer.close()

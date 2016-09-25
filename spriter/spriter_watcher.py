@@ -4,7 +4,7 @@ from spriter import VERSION
 from spriter.sprite import Sprite
 from watchdog.observers import Observer
 import imghdr
-import ConfigParser
+import configparser
 import os
 import sys
 import time
@@ -23,8 +23,8 @@ class Handler(object):
 
         path = os.path.dirname(event.src_path)
 
-        print("Image {0} {1}").format(os.path.basename(event.src_path),
-                                      event.event_type)
+        print(("Image {0} {1}").format(os.path.basename(event.src_path),
+                                      event.event_type))
         files = []
         for arg in os.listdir(path):
             j = os.path.join(path, arg)
@@ -49,10 +49,10 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
 
     if not options.config:
-        print 'You must provide a config.cfg file.'
+        print('You must provide a config.cfg file.')
         sys.exit(2)
 
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.readfp(open(options.config, "r"))
     img_dir = config.get("dirs", "img_dir")
     css_dir = config.get("dirs", "css_dir")
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     observer = Observer()
     observer.schedule(event_handler, path=img_dir, recursive=True)
 
-    print("Listening to {0}...").format(img_dir)
+    print(("Listening to {0}...").format(img_dir))
     observer.start()
     try:
         while True:
