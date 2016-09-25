@@ -1,5 +1,5 @@
 import datetime
-VERSION = "1.3.0"
+VERSION = "2.0.0"
 
-RELEASE_DATE = datetime.datetime(2014, 10, 10)
+RELEASE_DATE = datetime.datetime(2016, 9, 25)
 from .sprite import *
