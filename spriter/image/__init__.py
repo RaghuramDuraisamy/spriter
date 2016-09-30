@@ -23,7 +23,7 @@ def class_name_function(path):
     all non letter or non number will be change to '-';
     started by letter s to avoid numbers-only filenames"""
     base_name = os.path.basename(path).split(".")[0]
-    path = "s%s" % word.sub("-", base_name.lower().encode("ascii", "ignore"))
+    path = "s%s" % word.sub("-", base_name.lower().encode("ascii", "ignore").decode())
     return path
 
 
